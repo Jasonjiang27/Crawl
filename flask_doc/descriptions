@@ -1,0 +1,2 @@
+CrawlSpider是爬取那些具有一定规则网站的常用的爬虫，它基于Spider并有一些独特属性
+本项目爬取FLASK官网所有页面的内容，存入json文件，并导入redis数据库
