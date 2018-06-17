@@ -12,10 +12,9 @@ import json
 class FlaskDocPipeline(object):
     def process_item(self, item, spider,):
         item['text'] = re.sub('\s+',' ',item['text'])
-        self.redis.lpush('flask_doc:items',json.dumps(dict(item)))
+        self.redis.lpush('flask_doc:items',json.dumps(dict(item))) #写入数据库
         with open('data.json','a') as f:
-            json.dump(dict(item),f)
-        f2 = json.dumps(dict(item))
+            json.dump(dict(item),f)   #吧数据写入json文件
         return item
 
     def open_spider(self,spider):
