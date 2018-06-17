@@ -16,5 +16,5 @@ class FlaskSpider(scrapy.spiders.CrawlSpider):
     def parse_page(self, response):
         item=PageItem()
         item['url']=response.url
-        item['text']=' '.join(response.xpath('//text()').extract())
+        item['text']=' '.join(response.xpath('//text()').extract())  #//代表全局搜索,//text()是匹配全文内容
         yield item
