@@ -1,0 +1,8 @@
+爬取豆瓣高于8分的电影
+突破反爬虫
+1切换 UserAgent
+2禁用 Cookies （详见 COOKIES_ENABLED），因为有些网站会根据用户 cookies 确定用户行为
+3设置延迟，避免对网站短时间大量请求(详见 DOWNLOAD_DELAY)
+
+结果保存到 Redis 的链表结构中，key 为 douban_movie:items。每个 item 要包含 4 个 Field，分别是：页面链接（url），
+电影名称（name），电影简介（summary），电影评分（score）。爬虫起始 URL 为 ： https://movie.douban.com/subject/3011091/
