@@ -22,9 +22,9 @@ class AutoMobileMPipeline(object):
 
     def process_item(self, item, spider):
         #postItem = dict(item)  #把item转化成字典形式
-        cp = CarPrice()
+        cp = CarPrice()#实例化对象
         cp['url'] = item['url']
         cp['brand'] = item['brand'][0]
         cp['name'] = item['name']
         cp['price'] = item['price']
-        cp.save()
+        cp.save()  #最后必须save
